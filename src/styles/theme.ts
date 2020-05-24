@@ -1,7 +1,7 @@
 export default {
   colors: {
     white: '#FFFFFF',
-    font: '#3D3C3A',
+    font: '#050505',
     shadow: '#ccc',
     blue: '#216ba5',
     red: '#F44336',
