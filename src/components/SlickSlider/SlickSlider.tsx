@@ -7,6 +7,7 @@ export const SlickSlider: FC<IProps> = (props) => {
   const {
     children,
     dots = false,
+    swipe = false,
     speed = 500,
     slidesToShow = 1,
     slidesToScroll = 1,
@@ -16,6 +17,7 @@ export const SlickSlider: FC<IProps> = (props) => {
   return (
     <StyledSlider
       dots={dots}
+      swipe={swipe}
       infinite
       speed={speed}
       slidesToShow={slidesToShow}

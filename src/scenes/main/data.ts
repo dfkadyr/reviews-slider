@@ -1,3 +1,8 @@
+import Image1 from "../../assets/image/image1.jpg";
+import Image2 from "../../assets/image/image2.jpg";
+import Image3 from "../../assets/image/image3.jpg";
+import Image4 from "../../assets/image/image4.jpeg";
+
 import { IReviewProps } from './interface';
 
 export const reviewsList: IReviewProps[] = [
@@ -8,7 +13,8 @@ export const reviewsList: IReviewProps[] = [
     target: "Пробеги полумарафон в Вероне",
     text: "Очень долго хотела скинуть лишний вес да и вообще начать вести здоровый образ жизни. Но все было некогда. Знакомые позвали на открытую тренировку в школу бега с мастером спорта. Чем черт не шутит, решила сходить, тем более интересно было узнать, почему.",
     video: true,
-    image: "image1.jpg"
+    image: Image1,
+    color: "#6dc906"
   },
   {
     id: 2,
@@ -17,7 +23,8 @@ export const reviewsList: IReviewProps[] = [
     target: "Проедь полумарафон в Вероне",
     text: "Очень долго хотела скинуть лишний вес да и вообще начать вести здоровый образ жизни. Но все было некогда. Знакомые позвали на открытую тренировку в школу бега с мастером спорта. Чем черт не шутит, решила сходить, тем более интересно было узнать, почему.",
     video: false,
-    image: "image2.jpg"
+    image: Image2,
+    color: "#f2c300"
   },
   {
     id: 3,
@@ -26,7 +33,8 @@ export const reviewsList: IReviewProps[] = [
     target: "Проплыви полумарафон в Вероне",
     text: "Очень долго хотела скинуть лишний вес да и вообще начать вести здоровый образ жизни. Но все было некогда. Знакомые позвали на открытую тренировку в школу бега с мастером спорта. Чем черт не шутит, решила сходить, тем более интересно было узнать, почему.",
     video: true,
-    image: "image3.jpg"
+    image: Image3,
+    color: "#0084ea"
   },
   {
     id: 4,
@@ -35,6 +43,7 @@ export const reviewsList: IReviewProps[] = [
     target: "Пробеги полумарафон в Вероне",
     text: "Очень долго хотела скинуть лишний вес да и вообще начать вести здоровый образ жизни. Но все было некогда. Знакомые позвали на открытую тренировку в школу бега с мастером спорта. Чем черт не шутит, решила сходить, тем более интересно было узнать, почему.",
     video: false,
-    image: "image4.jpeg"
+    image: Image4,
+    color: "#ff6347"
   },
 ]

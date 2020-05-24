@@ -1,12 +1,9 @@
-import React, { useMemo } from "react";
+import React from "react";
 
 import { SlickSlider } from "../../components/SlickSlider";
-import { baseUrl } from "../../config";
-import test from "../../assets/image/image1.jpg";
-import ArrowIcon from "../../assets/arrow.svg";
 
 import { reviewsList } from "./data";
-import { IReviewProps, IProps } from "./interface";
+import { IProps } from "./interface";
 import {
   Wrapper,
   Container,
@@ -20,24 +17,37 @@ import {
   AllReadButton,
   TextContainer,
   TargetTitleContainer,
-  Goal
+  Goal,
+  Thumb,
+  ThumbImage,
+  JobTitle,
+  ThumbName,
 } from "./styles";
 
 export const MainPage: React.FunctionComponent<IProps> = () => {
+  const customThumb = (index: number) => (
+    <Thumb color={reviewsList[index].color}>
+      <ThumbImage src={reviewsList[index].image} />
+      <div>
+        <JobTitle color={reviewsList[index].color}>{reviewsList[index].job}</JobTitle>
+        <ThumbName>{reviewsList[index].name}</ThumbName>
+      </div>
+    </Thumb>
+  );
 
   return (
     <Wrapper>
       <Container>
         <Title>Отзывы</Title>
-        <SlickSlider fade>
+        <SlickSlider dots fade customPaging={customThumb}>
           {reviewsList.map((item) => (
             <div key={`slider-item-${item.id}`}>
               <ReviewContainer>
                 <ImageContainer>
-                  <PrimeImage src={test} />
+                  <PrimeImage src={item.image} />
                   <AuthorName isVideo={item.video}>{item.name}</AuthorName>
                 </ImageContainer>
-                <TextContainer>
+                <TextContainer color={item.color}>
                   <TargetTitleContainer>
                     <Goal>Цель</Goal>
                     <TargetTitle>{item.target}</TargetTitle>

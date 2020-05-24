@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 import videoIcon from "../../assets/video.svg";
 import goalIcon from "../../assets/goal.svg";
-import arrowIcon from "../../assets/arrow.svg";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -12,6 +11,33 @@ export const Wrapper = styled.div`
 
   height: 100vh;
 
+  .slick-dots {
+    position: relative;
+    bottom: 3px;
+
+    text-align: left;
+
+    border-right: 1px solid ${({ theme }) => theme.colors.shadow};
+
+    li {
+      width: 25%;
+      height: 100%;
+
+      padding: 0;
+      margin: 0;
+      &.slick-active {
+        background-color: #eaeaea;
+      }
+      &:first-child {
+        border-left: 1px solid ${({ theme }) => theme.colors.shadow};
+      }
+      &:not(:last-child) {
+        border-right: 1px solid ${({ theme }) => theme.colors.shadow};
+      }
+    }
+
+  }
+
   .slick-arrow {
     width: 50px;
     height: 40px;
@@ -20,7 +46,7 @@ export const Wrapper = styled.div`
     right: 0;
 
     background-color: transparent;
-    border: 1px solid ${({ theme }) => theme.colors.shadow};;
+    border: 1px solid ${({ theme }) => theme.colors.shadow};
     border-radius: 0 25px 25px 0;
 
     transition: 0.3s ease-in-out;
@@ -145,16 +171,16 @@ export const AllReadButton = styled.button`
   cursor: pointer;
 `;
 
-export const TextContainer = styled.div`
+export const TextContainer = styled.div<{color: string}>`
   padding: 30px 40px;
 
   color: ${({ theme }) => theme.colors.white};
 
-  background-color: green;
+  background-color: ${({ color }) => color ? color : 'green'};
 `;
 
 export const PrimeImage = styled.img`
-  max-width: 600px;
+  min-width: 600px;
   height: 410px;
 `;
 
@@ -188,3 +214,38 @@ export const TargetTitleContainer = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export const Thumb = styled.div<{color: string}>`
+  display: flex;
+
+  max-height: 100px;
+
+  padding: 20px 20px 15px 20px;
+
+  border-bottom: 5px solid ${({ color }) => color ? color : 'green'};
+`
+
+export const ThumbImage = styled.img`
+  width: 60px;
+  height: 60px;
+
+  margin-right: 15px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+`
+
+export const JobTitle = styled.div<{color: string}>`
+  font-size: 20px;
+
+  color: ${({ color }) => color ? color : 'green'};
+
+  text-transform: uppercase;
+`;
+
+export const ThumbName = styled.div`
+  line-height: 1.25;
+
+  padding-right: 50%;
+`

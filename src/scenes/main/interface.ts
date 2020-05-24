@@ -8,4 +8,5 @@ export interface IReviewProps {
   text: string;
   video: boolean;
   image: string;
+  color: string;
 }
